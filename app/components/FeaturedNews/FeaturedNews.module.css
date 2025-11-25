@@ -97,7 +97,7 @@
   font-family: var(--font-inter), sans-serif;
   color: var(--text-secondary-color);
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.4;
   
   /* Limita a 3 linhas e põe "..." */
   display: -webkit-box;
