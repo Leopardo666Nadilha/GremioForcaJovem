@@ -1,0 +1,52 @@
+:root {   
+  --background-color: #020617;                        /* Esse azul quase preto é mais suave para os olhos e dá um ar mais "premium". */
+  --blog-cards-color: #0f172a;                        /* Cria uma profundidade com o fundo e da a impressão de "flutuar" */ 
+  --blog-cards-border-color: #1e293b;                 /* Um tom um pouco mais claro que o fundo dos cards para definir suas bordas. */
+  --blog-cards-border-color-secondary: #334155;       /* Um tom intermediário para bordas secundárias, mantendo a harmonia com o tema. */
+  --blog-background-hover-color: #06b6d4;             /* Um ciano escuro. */
+  --border-cards-color: #7c3aed;                      /* Um roxo vibrante para bordas de destaque. */
+  --border-cards-color-hover: #d8b4fe;                /* Um roxo claro para bordas em hover. */
+  --empty-blog-cards-color: #64748b;                  /* Cinza azulado para mensagens de vazio, mantendo a harmonia com o tema. */
+  --primary-color: #8b5cf6;                           /* Um roxo vibrante que chama atenção sem ser agressivo. */
+  --primary-color-glow: rgba(139, 92, 246, 0.5);      /* Versão translúcida para efeitos de brilho. */
+  --cta-buttons-color: #22d3ee;                       /* Um ciano neon que contrasta bem com o fundo escuro. */
+  --cta-buttons-color-glow: rgba(34, 211, 238, 0.6);  /* Versão translúcida para efeitos de brilho. */
+  --cta-buttons-color-secondary: #fbbf24;             /* Um amarelo vibrante para botões secundários. */
+  --cta-buttons-color-terciary: #a78bfa;              /* Um roxo claro para botões terciários. */
+  --cta-buttons-color-quaternary: #34d399;            /* Um verde suave para botões quaternários. */
+  --text-primary-color: #f8fafc;                      /* Um tom próximo ao branco para facilitar a leitura. */
+  --text-secondary-color: #94a3b8;                    /* Um cinza azulado para textos secundários, mantendo a harmonia com o tema. */
+  --branco-puro: #ffffff;                             /* Branco puro para elementos que precisam de destaque máximo. */
+  --branco-azulado: #cbd5e1;                          /* Um branco com um toque azulado para suavizar o contraste. */
+  --branco-acinzentado: #e2e8f0;                      /* Um branco com um toque acinzentado para suavizar o contraste. */
+  --alert-color-red: #ef4444;                         /* Um vermelho vibrante para alertas e notificações. */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-primary-color);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin: 0;
+  padding: 0px;
+}
+
+.news_title {
+  color: var(--text-primary-color);
+  font-family: var(--font-jakarta), sans-serif;
+  font-size: 1.5 rem;
+  font-weight: 700;
+  margin: 2rem 0 1.5rem 0;
+  border-left: 4px solid var(--cta-buttons-color);
+  padding-left: 1rem;
+}
+
+.main-content {
+  padding-top: 80px;
+  padding-bottom: 76px;
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    padding-bottom: 0;
+  }
+}

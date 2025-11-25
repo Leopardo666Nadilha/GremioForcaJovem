@@ -1,0 +1,63 @@
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 75px; /* Altura confortável para o dedão */
+  background-color: #0f172a; /* Slate 900 */
+  border-top: 1px solid #1e293b;
+  z-index: 90; /* Fica abaixo do Header (100) se eles se cruzarem, mas acima do conteúdo */
+  
+  /* Correção para iPhone (SafeArea) */
+  padding-bottom: env(safe-area-inset-bottom); 
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 Botões iguais */
+  height: 100%;
+  max-width: 600px; /* Não estica demais no desktop */
+  margin: 0 auto;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #64748b; /* Slate 500 (Inativo) */
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+
+.navItem:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.active {
+  color: #22d3ee; /* Ciano (Ativo) */
+}
+
+/* O Ícone */
+.icon {
+  width: 26px;
+  height: 26px;
+  transition: transform 0.2s ease;
+}
+
+/* Efeito "pulo" quando ativo */
+.active .icon {
+  transform: translateY(-3px);
+}
+
+.label {
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .bottomNav {
+    display: none;
+  }
+}

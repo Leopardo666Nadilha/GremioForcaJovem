@@ -1,0 +1,109 @@
+.container {
+  background-color: var(--background-color);
+  min-height: 100vh;
+  padding: 2rem 1rem 0 1rem;
+}
+
+.wrapper {
+  max-width: 56rem; /* Largura limite para leitura */
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-jakarta), sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--branco-puro);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-family: var(--font-inter), sans-serif;
+  color: var(--text-secondary-color);
+  font-size: 1.1rem;
+}
+
+/* --- Área de Controles (Busca e Filtros) --- */
+.controls {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* Input de Pesquisa */
+.searchWrapper {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+}
+
+.searchInput {
+  width: 83%;
+  background-color: var(--blog-cards-color);
+  border: 1px solid var(--blog-cards-border-color-secondary);
+  color: var(--branco-puro);
+  padding: 1rem 1rem 1rem 3rem; /* Espaço para o ícone */
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  border-color: var(--cta-buttons-color);
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--empty-blog-cards-color);
+  width: 20px;
+  height: 20px;
+}
+
+/* Botões de Categoria */
+.categories {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.categoryBtn {
+  background: transparent;
+  border: 1px solid var(--blog-cards-border-color-secondary);
+  color: var(--branco-azulad);
+  padding: 0.5rem 1rem;
+  border-radius: 99px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.categoryBtn:hover {
+  background-color: var(--blog-cards-border-colo);
+  border-color: var(--text-secondary-color);
+}
+
+/* Estado Ativo do Botão */
+.activeCategory {
+  background-color: var(--cta-buttons-color);
+  border-color: var(--cta-buttons-color);
+  color: var(--blog-cards-color); /* Texto escuro para contraste */
+  font-weight: 700;
+}
+
+.activeCategory:hover {
+  background-color: var(--blog-background-hover-color); /* Ciano mais escuro */
+}

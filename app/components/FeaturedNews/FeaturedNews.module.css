@@ -1,0 +1,146 @@
+.container {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin: 3rem auto; /* A mágica acontece aqui: 'auto' nas margens laterais */
+}
+
+.wrapper {
+  max-width: 900px;
+  width: 100%;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card {
+  background-color: var(--blog-cards-color);
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--blog-cards-border-color);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Mobile First: Coluna */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efeito Hover no Card Inteiro */
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color); /* Roxo ao passar o mouse */
+  box-shadow: 0 20px 40px -10px rgba(139, 92, 246, 0.2); /* Glow Roxo */
+}
+
+/* Badge Flutuante */
+.badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: var(--alert-color-red);
+  color: white;
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 99px;
+  z-index: 20;
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);
+  font-family: var(--font-inter), sans-serif;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 250px;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  /* Degradê do transparente para o escuro para o texto aparecer */
+  background: linear-gradient(to top, #0f172a 10%, transparent 100%);
+}
+
+.content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.category {
+  color: var(--cta-buttons-color); /* Ciano */
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.title {
+  font-family: var(--font-jakarta), sans-serif;
+  font-size: 1.5rem;
+  color: var(--branco-puro);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.summary {
+  font-family: var(--font-inter), sans-serif;
+  color: var(--text-secondary-color);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  
+  /* Limita a 3 linhas e põe "..." */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.readMore {
+  margin-top: 0.5rem;
+  color: var(--cta-buttons-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.2s ease;
+}
+
+.card:hover .readMore {
+  gap: 0.8rem; /* Setinha anda para o lado no hover */
+}
+
+/* Desktop: Layout Horizontal (Imagem na esq, Texto na dir) */
+@media (min-width: 768px) {
+  .card {
+    flex-direction: row;
+    height: 350px;
+  }
+  .imageContainer {
+    width: 55%;
+    height: 100%;
+  }
+  .content {
+    width: 45%;
+    justify-content: center;
+    padding: 2.5rem;
+  }
+  .overlay {
+    /* No desktop, degradê vem da direita para a esquerda */
+    background: linear-gradient(to right, transparent 0%, rgba(15, 23, 42, 0.8) 100%);
+  }
+  .title {
+    font-size: 2rem;
+  }
+}

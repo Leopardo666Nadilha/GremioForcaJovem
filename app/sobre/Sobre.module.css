@@ -1,0 +1,137 @@
+.container {
+  min-height: 100vh;
+  /* Gradiente Roxo Profundo (Cyberpunk Theme) */
+  background: linear-gradient(180deg, #020617 0%, #1e1b4b 50%, #2e1065 100%);
+  padding: 3rem 1.5rem 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.teamSection {
+  width: 100%;
+  max-width: 1000px; /* Um pouco menor que o grid total */
+  margin-bottom: 4rem; /* Espaço antes dos cards */
+  position: relative;
+}
+
+.teamImageWrapper {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 2px solid var(--border-cards-color); /* Borda Roxa Neon */
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.4); /* Glow Roxo Forte */
+  position: relative;
+}
+
+/* Camada roxa por cima da foto para integrar ao tema */
+.teamImageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(2, 6, 23, 0.7) 0%, rgba(124, 58, 237, 0.2) 100%);
+  z-index: 2;
+}
+
+.teamImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.teamCaption {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--branco-azulado);
+  font-family: var(--font-jakarta), sans-serif;
+  font-weight: 600;
+}
+
+.title {
+  font-family: var(--font-jakarta), sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--branco-puro);
+  margin-bottom: 1rem;
+  letter-spacing: -0.05em;
+  text-shadow: 0 0 20px rgba(168, 85, 247, 0.5); /* Brilho Roxo no Título */
+}
+
+.subtitle {
+  font-family: var(--font-inter), sans-serif;
+  color: var(--branco-azulado);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  grid-template-columns: 1fr;
+}
+
+/* O CARD NEON */
+.card {
+  background-color: rgba(15, 23, 42, 0.6); /* Fundo escuro translúcido */
+  backdrop-filter: blur(12px); /* Efeito de vidro */
+  border: 1px solid var(--border-cards-color); /* Borda Roxa Base */
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito Hover: O Card acende */
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-cards-color-hover); /* Borda fica mais clara */
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.3); /* Glow Roxo */
+  background-color: rgba(15, 23, 42, 0.8);
+}
+
+/* Título do Card */
+.cardTitle {
+  font-family: var(--font-jakarta), sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--branco-puro);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Ícone do Card */
+.icon {
+  color: var(--cta-buttons-color); /* Ciano para contraste com o roxo */
+  width: 28px;
+  height: 28px;
+}
+
+.cardText {
+  font-family: var(--font-inter), sans-serif;
+  color: var(--branco-acinzentad);
+  line-height: 1.7;
+  font-size: 1rem;
+  text-align: justify; /* Deixa o texto quadradinho e organizado */
+}
+
+.wideCard {
+  grid-column: 1 / -1; /* Ocupa todas as colunas disponíveis */
+}

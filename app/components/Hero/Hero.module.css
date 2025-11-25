@@ -1,0 +1,119 @@
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden; /* Impede que a luz "vaze" da tela */
+  background-color: var(--background-color);
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: -100px; /* Posiciona a luz no topo */
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 500px;
+  /* Gradiente Radial: Roxo no centro, transparente nas bordas */
+  background: radial-gradient(
+    circle, 
+    rgba(139, 92, 246, 0.25) 0%, /* Violeta suave */
+    rgba(2, 6, 23, 0) 70%        /* Transparente */
+  );
+  /* Desfoque intenso para parecer luz */
+  filter: blur(60px);
+  pointer-events: none; /* O clique passa através da luz */
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2; /* Fica acima da luz */
+  max-width: 800px;
+}
+
+.title {
+  font-family: var(--font-jakarta), sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.highlight {
+  background: linear-gradient(90deg, #22d3ee, #a78bfa); /* Ciano -> Roxo Claro */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* O texto fica transparente para mostrar o fundo */
+}
+
+.subtitle {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  margin: 0 2rem 2.5rem;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  background-color: var(--cta-buttons-color);
+  color: var(--blog-cards-color); /* Texto escuro para leitura */
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 9999px; /* Redondo (Pílula) */
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  /* Sombra Ciano Brilhante */
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.3);
+}
+
+.ctaButton:hover {
+  background-color: #67e8f9; /* Ciano mais claro */
+  transform: scale(1.05); /* Aumenta levemente */
+  box-shadow: 0 0 25px rgba(34, 211, 238, 0.6); /* Brilho mais forte */
+}
+
+.socialButton {
+  display: inline-flex; 
+  align-items: center;
+  gap: 10px;  
+  background-color: rgba(255, 255, 255, 0.05); /* Quase transparente */
+  background-image: linear-gradient(#020617, #020617), /* Fundo do botão */
+                    linear-gradient(to right, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); /* Degradê do Instagram */
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border: 2px solid transparent; /* Essencial para o gradiente da borda */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+  color: var(--branco-puro);
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px); /* Efeito de vidro */
+}
+
+.socialButton:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Fundo sutilmente mais visível */
+  box-shadow: 0 0 25px rgba(214, 41, 118, 0.4); /* Glow rosa mais forte */
+  border-color: #d62976; /* Cor do Instagram (Rosa/Roxo) */
+  box-shadow: 0 0 20px rgba(214, 41, 118, 0.3); /* Glow Rosa */
+  transform: translateY(-2px);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
