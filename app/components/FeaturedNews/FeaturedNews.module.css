@@ -2,7 +2,7 @@
   width: 90%;
   display: flex;
   justify-content: center;
-  margin: 3rem auto; /* A mágica acontece aqui: 'auto' nas margens laterais */
+  margin: 3rem auto;
 }
 
 .wrapper {
@@ -41,7 +41,7 @@
   top: 1rem;
   left: 1rem;
   background-color: var(--alert-color-red);
-  color: white;
+  color: var(--branco-puro);
   font-weight: bold;
   font-size: 0.75rem;
   padding: 0.4rem 0.8rem;
