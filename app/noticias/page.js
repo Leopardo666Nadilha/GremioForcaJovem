@@ -1,5 +1,6 @@
 import { getSiteData } from '@/lib/googleSheets';
 import NewsList from './NewsList';
+import { Suspense } from 'react';
 import styles from './Noticias.module.css';
 
 // Atualiza a cada 60 segundos se houver novos posts
@@ -15,7 +16,9 @@ export default async function NoticiasPage() {
 
   return (
     <main className={styles.container}>
-      <NewsList allPosts={allPosts} />
+      <Suspense fallback={<p>Carregando notícias...</p>}>
+        <NewsList allPosts={allPosts} />
+      </Suspense>
     </main>
   );
 }
