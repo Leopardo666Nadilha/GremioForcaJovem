@@ -11,7 +11,6 @@ export default function TeamGrid({ members }) {
           <div key={index} className={styles.card}>
             
             <div className={styles.imageWrapper}>
-              {/* Fallback se não tiver foto: Mostra um ícone ou imagem padrão */}
               {member.foto ? (
                 <Image 
                   src={member.foto} 

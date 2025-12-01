@@ -4,7 +4,7 @@ import TeamGrid from '../components/TeamGrid/TeamGrid';
 import styles from './Sobre.module.css';
 
 export const metadata = {
-  title: 'Quem Somos | Grêmio Força Jovem',
+  title: 'Grêmio Força Jovem',
   description: 'Conheça a história, missão e visão do Grêmio Estudantil Força Jovem.',
 };
 
