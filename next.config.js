@@ -10,6 +10,12 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'lh3.googleusercontent.com',
       },
+      // --- ADICIONE ESTE BLOCO ---
+      {
+        protocol: 'https',
+        hostname: 'i.imgur.com',
+      },
+      // ---------------------------
     ],
   },
   reactCompiler: true,

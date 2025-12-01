@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import { getEquipeData } from '@/lib/actions';
+import TeamGrid from '../components/TeamGrid/TeamGrid';
 import styles from './Sobre.module.css';
 
 export const metadata = {
@@ -6,7 +8,9 @@ export const metadata = {
   description: 'Conheça a história, missão e visão do Grêmio Estudantil Força Jovem.',
 };
 
-export default function SobrePage() {
+export default async function SobrePage() {
+  // Busca os dados da equipe
+  const members = await getEquipeData();
   return (
     <main className={styles.container}>
       
@@ -99,8 +103,9 @@ export default function SobrePage() {
             </p>
           </div>
         </div>
-
       </div>
+      {/* GRID DA EQUIPE */}
+      <TeamGrid members={members} />
     </main>
   );
 }
