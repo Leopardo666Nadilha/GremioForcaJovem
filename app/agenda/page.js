@@ -29,7 +29,7 @@ export default async function AgendaPage() {
     let hash = 5381; // Número primo inicial (semente)
 
     for (let i = 0; i < str.length; i++) {
-      // A mágica: hash * 33 + caractere
+      // Hash * 33 + caractere
       // O uso de bitwise shift (<< 5) torna isso muito rápido e caótico
       hash = ((hash << 5) + hash) + str.charCodeAt(i); 
     }
