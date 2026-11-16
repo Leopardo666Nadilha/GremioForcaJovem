@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import NewsFeed from '../components/NewsFeed/NewsFeed';
 import styles from './Noticias.module.css';
@@ -10,25 +10,23 @@ export default function NewsList({ allPosts }) {
   const categoriaUrl = searchParams.get('categoria'); // Pega o que está na URL (?categoria=...)
 
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('Todas');
+  // Categoria clicada pelo usuário, junto com a URL em que ela foi escolhida.
+  // Se a URL mudar, a escolha antiga é ignorada e vale a categoria da URL.
+  const [manualChoice, setManualChoice] = useState({ url: categoriaUrl, category: null });
 
   // Lista de categorias disponíveis
   const categories = ['Todas', ...new Set(allPosts.map(post => post.category).filter(Boolean))];
 
-  // 2. Efeito que roda ao carregar a página para ler a URL
-  useEffect(() => {
-    if (categoriaUrl) {
-      // Procura a categoria na lista (ignorando maiúsculas/minúsculas)
-      // Ex: URL "esportes" encontra "Esportes" na lista de categorias
-      const categoriaEncontrada = categories.find(
-        cat => cat.toLowerCase() === categoriaUrl.toLowerCase()
-      );
+  // 2. Categoria vinda da URL (ignorando maiúsculas/minúsculas)
+  // Ex: URL "esportes" encontra "Esportes" na lista de categorias
+  const categoriaDaUrl = categoriaUrl
+    ? categories.find(cat => cat.toLowerCase() === categoriaUrl.toLowerCase())
+    : undefined;
 
-      if (categoriaEncontrada) {
-        setSelectedCategory(categoriaEncontrada);
-      }
-    }
-  }, [categoriaUrl]); // Roda sempre que a URL mudar
+  const selectedCategory =
+    (manualChoice.url === categoriaUrl && manualChoice.category) || categoriaDaUrl || 'Todas';
+
+  const setSelectedCategory = (category) => setManualChoice({ url: categoriaUrl, category });
 
   // 3. Lógica de Filtragem (Mantém igual)
   const filteredPosts = allPosts.filter((post) => {

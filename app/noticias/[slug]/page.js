@@ -1,6 +1,7 @@
 import { getSiteData } from '@/lib/googleSheets';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import PostImage from '@/app/components/PostImage';
 import styles from './page.module.css';
 
 // Atualiza o cache a cada 60 segundos
@@ -57,10 +58,14 @@ export default async function NoticiaDetalhe({ params }) {
         </header>
 
         <div className={styles.imageWrapper}>
-          <img 
-            src={post.image} 
-            alt={post.title} 
-            className={styles.image} 
+          <PostImage
+            src={post.image}
+            alt={post.title}
+            className={styles.image}
+            width={1200}
+            height={675}
+            preload
+            sizes="(min-width: 900px) 900px, 100vw"
           />
         </div>
 

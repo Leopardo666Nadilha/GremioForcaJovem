@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PostImage from '../PostImage';
 import styles from './NewsFeed.module.css';
 
 export default function NewsFeed({ posts }) {
@@ -14,11 +15,12 @@ export default function NewsFeed({ posts }) {
             
             {/* Imagem */}
             <div className={styles.imageWrapper}>
-              <img 
-                src={post.image} 
-                alt={post.title} 
+              <PostImage
+                src={post.image}
+                alt={post.title}
                 className={styles.image}
-                loading="lazy" // Performance: carrega só quando aparece na tela
+                fill // Carrega só quando aparece na tela (lazy é o padrão)
+                sizes="(min-width: 768px) 50vw, 100vw" // 2 colunas a partir de 768px
               />
               <span className={styles.categoryTag}>{post.category}</span>
             </div>

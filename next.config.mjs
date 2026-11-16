@@ -1,22 +1,13 @@
+import { ALLOWED_IMAGE_HOSTS } from './lib/imageHosts.js';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'drive.google.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'lh3.googleusercontent.com',
-      },
-      // --- ADICIONE ESTE BLOCO ---
-      {
-        protocol: 'https',
-        hostname: 'i.imgur.com',
-      },
-      // ---------------------------
-    ],
+    // Para liberar um novo domínio de imagens, edite lib/imageHosts.js
+    remotePatterns: ALLOWED_IMAGE_HOSTS.map((hostname) => ({
+      protocol: 'https',
+      hostname,
+    })),
   },
   reactCompiler: true,
 };

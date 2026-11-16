@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PostImage from '../PostImage';
 import styles from './FeaturedNews.module.css';
 
 export default function FeaturedNews({ post }) {
@@ -18,10 +19,13 @@ export default function FeaturedNews({ post }) {
 
             {/* Imagem de Fundo */}
             <div className={styles.imageContainer}>
-              <img 
-                src={post.image} 
-                alt={post.title} 
-                className={styles.image} 
+              <PostImage
+                src={post.image}
+                alt={post.title}
+                className={styles.image}
+                fill
+                preload // Destaque aparece no topo: carrega primeiro
+                sizes="(min-width: 768px) 55vw, 100vw"
               />
               {/* Degradê para o texto ficar legível em cima da foto */}
               <div className={styles.overlay}></div>
